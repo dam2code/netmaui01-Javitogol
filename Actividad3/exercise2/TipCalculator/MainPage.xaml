@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TipCalculator.MainPage">
+
+    <!-- Agregamos Padding y Espaciado -->
+    <VerticalStackLayout Padding="40" Spacing="10">
+
+        <!-- Fila para el input de la factura -->
+        <HorizontalStackLayout Spacing="10">
+            <Label Text="Bill" WidthRequest="100" VerticalOptions="Center" />
+            <Entry x:Name="billInput" Placeholder="Enter Amount" Keyboard="Numeric" />
+        </HorizontalStackLayout>
+
+        <!-- Fila para el total de la propina -->
+        <HorizontalStackLayout Margin="0,20,0,0" Spacing="10">
+            <Label Text="Tip" WidthRequest="100" />
+            <Label x:Name="tipOutput" Text="0.00" />
+        </HorizontalStackLayout>
+
+        <!-- Fila para el total general -->
+        <HorizontalStackLayout Spacing="10">
+            <Label Text="Total" WidthRequest="100"/>
+            <Label x:Name="totalOutput" Text="0.00" />
+        </HorizontalStackLayout>
+
+        <!-- Fila para el porcentaje de propina -->
+        <HorizontalStackLayout VerticalOptions="End" Spacing="10">
+            <Label Text="Tip Percentage" WidthRequest="100"/>
+            <Label x:Name="tipPercent" Text="15%" />
+        </HorizontalStackLayout>
+
+        <!-- Control Slider para porcentaje de propina -->
+        <Slider x:Name="tipPercentSlider" Minimum="0" Maximum="100" Value="15" />
+
+        <!-- Fila para los botones de porcentaje de propina -->
+        <HorizontalStackLayout Margin="0,20,0,0" Spacing="10">
+            <Button Text="15%" Clicked="OnNormalTip" WidthRequest="150" HorizontalOptions="Center"/>
+            <Button Text="20%" Clicked="OnGenerousTip" WidthRequest="150" HorizontalOptions="Center"/>
+        </HorizontalStackLayout>
+
+        <!-- Fila para los botones de redondeo -->
+        <HorizontalStackLayout Margin="0,20,0,0" Spacing="10">
+            <Button x:Name="roundDown" Text="Round Down" WidthRequest="150" HorizontalOptions="Center"/>
+            <Button x:Name="roundUp" Text="Round Up" WidthRequest="150" HorizontalOptions="Center"/>
+        </HorizontalStackLayout>
+
+    </VerticalStackLayout>
+
+</ContentPage>
