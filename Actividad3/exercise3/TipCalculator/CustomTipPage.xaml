@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:TipCalculator"
+             x:Class="TipCalculator.CustomTipPage">
+
+    <Grid Padding="20">
+        <Label Text="Bill" Style="{StaticResource infoLabelStyle}" Grid.Row="0" Grid.Column="0"/>
+        <Entry x:Name="billInput" Placeholder="Enter Amount" Keyboard="Numeric" Grid.Row="0" Grid.Column="1"/>
+
+        <Label Text="Tip Percentage" Style="{StaticResource infoLabelStyle}" Grid.Row="1" Grid.Column="0"/>
+        <Slider x:Name="tipSlider" Minimum="0" Maximum="100" Value="15" Grid.Row="1" Grid.Column="1"/>
+
+        <Label x:Name="tipOutput" Text="0.00" Style="{StaticResource infoLabelStyle}" Grid.Row="2" Grid.Column="0"/>
+        <Label x:Name="totalOutput" Text="0.00" Style="{StaticResource infoLabelStyle}" Grid.Row="2" Grid.Column="1"/>
+
+        <Button Text="Calculate Tip" Clicked="OnCalculateTipClicked" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2"/>
+    </Grid>
+
+</ContentPage>
